@@ -1,11 +1,19 @@
-import logo from './logo.svg';
-
+import React from 'react'
+import Header from './Header'
+import ForSale from './Forsale'
+import MyGarage from './MyGarage'
 
 function App() {
   return (
-    <Header />,
-    <Forsale />,
+    <>
+    
+    <Header />
+    
+    <main>
+    <ForSale />
     <MyGarage />
+    </main>
+    </>
   );
 }
 
