@@ -14,6 +14,24 @@ export default function ForSale(){
       <section>
         car item
       </section>
+      <section>
+        car item
+      </section>
+      <section>
+        car item
+      </section>
+      <section>
+        car item
+      </section>
+      <section>
+        car item
+      </section>
+      <section>
+        car item
+      </section>
+      {/* <section>
+        car item
+      </section> */}
     </article>
     
   );
