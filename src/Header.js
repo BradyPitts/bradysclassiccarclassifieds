@@ -1,10 +1,10 @@
 import React from 'react'
-import Logo from './star.png'
+import Logo from './images/star.png'
 
 export default function Header(){
   return(
     <header>
-      <img src = 'Logo' alt = "Brady's Logo" />
+      <img src = {Logo} alt = "Brady's Logo" />
       <h1>Brady's Classic Car Classifieds</h1>
       <nav>
         <a>Home</a>
