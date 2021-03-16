@@ -26,7 +26,12 @@ export default function MyGarage(){
       <h3>Your Owned Cars</h3>
       <h5>Your Money ${myMoney}</h5>
 
-      ${OwnedCars()}
+      {/* ${OwnedCars()} */}
+      <section>
+        <h4>Owned Car</h4>
+        <br />
+        <button>Sell Car</button>
+      </section>
 
 
 

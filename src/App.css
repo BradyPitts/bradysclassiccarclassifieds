@@ -42,7 +42,7 @@ nav{
 
 main{
   width: 100%;
-  height: 85 vh;
+  height: 85vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -58,7 +58,8 @@ article{
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  width: 70 vw;
+  width: 70vw;
+  height: 80vh;
   box-sizing: border-box;
   background-color: #ffffcc;
   border: 5px solid dodgerblue;
@@ -67,7 +68,10 @@ article{
 }
 
 h2{
-  display: block;
+  margin: 20px;
+  width: 70vw;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -94,10 +98,27 @@ section{
   height: 15vw;
   width: 15vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   background-color: floralwhite;
   border: 2px solid gray;
   border-radius: 20px;
+}
+
+article section button {
+  background-color: lightskyblue;
+  
+}
+
+aside section button {
+  background-color: red;
+}
+
+section h4{
+  margin: 15px;
+  width: 14vw;
+  display: flex;
+  justify-content: center;
 }

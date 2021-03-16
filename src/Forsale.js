@@ -12,7 +12,44 @@ export default function ForSale(){
     <article>
       <h2>Cars For Sale!</h2>
 
-      SaleList()
+      <section>
+        <h4>Car For Sale</h4>
+        <br />
+        <button>Buy Car</button>
+      </section>
+      <section>
+        <h4>Car For Sale</h4>
+        <br />
+        <button>Buy Car</button>
+      </section>
+      <section>
+        <h4>Car For Sale</h4>
+        <br />
+        <button>Buy Car</button>
+      </section>
+      <section>
+        <h4>Car For Sale</h4>
+        <br />
+        <button>Buy Car</button>
+      </section>
+      <section>
+        <h4>Car For Sale</h4>
+        <br />
+        <button>Buy Car</button>
+      </section>
+      <section>
+        <h4>Car For Sale</h4>
+        <br />
+        <button>Buy Car</button>
+      </section>
+      <section>
+        <h4>Car For Sale</h4>
+        <br />
+        <button>Buy Car</button>
+      </section>
+      
+      
+      
       
     </article>
     
