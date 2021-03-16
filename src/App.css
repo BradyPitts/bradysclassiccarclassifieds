@@ -56,7 +56,7 @@ article{
   margin: 1.5vw;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: space-around;
   flex-wrap: wrap;
   width: 70vw;
   height: 80vh;
@@ -94,6 +94,10 @@ h3{
   margin: 20px;
 }
 
+h5{
+  margin: 5px;
+}
+
 section{
   height: 15vw;
   width: 15vw;
@@ -109,11 +113,13 @@ section{
 
 article section button {
   background-color: lightskyblue;
+  padding: 5px;
   
 }
 
 aside section button {
   background-color: red;
+  padding: 5px;
 }
 
 section h4{

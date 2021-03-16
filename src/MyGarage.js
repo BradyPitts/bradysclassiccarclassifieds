@@ -32,6 +32,11 @@ export default function MyGarage(){
         <br />
         <button>Sell Car</button>
       </section>
+      <section>
+        <h4>Owned Car</h4>
+        <br />
+        <button>Sell Car</button>
+      </section>
 
 
 
