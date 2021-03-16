@@ -7,13 +7,13 @@ import axios from 'axios'
 function App() {
 
   function SaleList(){
-    axios.get ('./CarsList/')
+    axios.get ('./CarsList/carsList/')
     .this(response => {
-      for(let i = 0; i < CarsList; i++){
+      for(let i = 0; i < carsList.length; i++){
         return(
           <section>
             CarsList[i]
-            <button onclick >Buy Car</button>
+            <button onclick={BuyCar} >Buy Car</button>
           </section>
         ) 
       }
@@ -21,7 +21,32 @@ function App() {
   }
 
   function BuyCar(){
+    this.ownedList.post
+    this.SaleList.delete
+  }
 
+  function OwnedCars(){
+    axios.get ('./CarsList/ownedCars/')
+    .this(response => {
+      for(let i = 0; i < ownedCars.length; i++){
+        return(
+          <section>
+            CarsList[i]
+            <button onclick={NameCar} >Rename Car</button>
+            <button onclick={SellCar} >Sell Car</button>
+          </section>
+        ) 
+      }
+    })
+  }
+
+  function NameCar(){
+    this.ownedCars.name = InputEvent
+  }
+
+  function SellCar(){
+    this.SaleList.post
+    this.ownedCars.delete
   }
 
   return (

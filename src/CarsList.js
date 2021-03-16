@@ -76,4 +76,5 @@ const carsList = [
   }
 ]
 
-// return null;
+const ownedCars = [null];
+
