@@ -53,7 +53,7 @@ main{
 
 
 article{
-  margin-top: 20px;
+  margin: 1.5vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -63,6 +63,7 @@ article{
   background-color: #ffffcc;
   border: 5px solid dodgerblue;
   overflow: auto;
+  border-radius: 20px;
 }
 
 h2{
@@ -71,16 +72,17 @@ h2{
 
 
 aside{
-  margin-top: 20px;
+  margin: 1.5vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  box-sizing: border-box;
   width: 20vw;
   height: 80vh;
-  box-sizing: border-box;
   background-color: orange;
   border: 5px solid lightgray;
+  border-radius: 20px;
   overflow: auto;
 }
 
