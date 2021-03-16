@@ -10,7 +10,7 @@ export default function MyGarage(){
     
     <aside>
       <h3>Your Owned Cars</h3>
-      <h5>${myMoney}</h5>
+      <h5>Your Money ${myMoney}</h5>
 
       <section>
         car item

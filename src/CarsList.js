@@ -1,4 +1,6 @@
+// import React from 'react'
 
+// export default function CarsList(){
 
 const carsList = [
 
@@ -23,7 +25,7 @@ const carsList = [
   },
 
   {
-    id = 3,
+    id: 3,
     img = images/sn95.jpeg,
     name = 'SN95 II',
     make = 'Ford',
@@ -72,5 +74,7 @@ const carsList = [
     price = 245000,
 
   }
-
 ]
+
+// return null;
+// }

@@ -72,13 +72,20 @@ h2{
 
 aside{
   margin-top: 20px;
-  display: inline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   width: 20vw;
   height: 80vh;
   box-sizing: border-box;
   background-color: orange;
   border: 5px solid lightgray;
   overflow: auto;
+}
+
+h3{
+  margin: 20px;
 }
 
 section{

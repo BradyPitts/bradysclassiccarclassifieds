@@ -1,8 +1,9 @@
 import React from 'react'
+import List from './CarsList.js'
 
 export default function ForSale(){
 
-  const carsForSale = []
+  const carsForSale = [List]
 
 
 
@@ -12,7 +13,7 @@ export default function ForSale(){
       <h2>Cars For Sale!</h2>
 
       <section>
-        car item
+        carsForSale[0]
       </section>
       <section>
         car item
