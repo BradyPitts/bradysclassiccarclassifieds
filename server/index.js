@@ -1,5 +1,11 @@
-const express = require("express")
+const express = require("express"),
+      forSale = require ('./control/forSale'),
+      garage = require ('./control/garage'),
+      port = 3943,
+      app = express()
 
-const app = express()
+app.use(express.json());
 
-app.listen(3943, () => console.log(`server running on port 3943`))
+app.get('/api/')
+
+app.listen(port, () => console.log(`server running on port ${port}`))
