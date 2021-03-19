@@ -1,24 +1,33 @@
-import React from 'react'
-import Header from './Header'
-import ForSale from './Forsale'
-import MyGarage from './MyGarage'
+import React, { Component } from 'react'
+import Header from './components/Header'
+import ForSale from './components/Forsale'
+import MyGarage from './components/MyGarage'
 import axios from 'axios'
+// import './CarsList.json'
 
-function App() {
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      carsList: []
+    }
+    this.saleList = this.saleList.bind(this);
+  }
+  
+  saleList(carsList){
+    axios.get ('./CarsList.json')
+      .then(res => {
+      this.setState({ saleList: res.data })
+    })
+  }
 
-  // function SaleList(){
-  //   axios.get ('./CarsList/carsList/')
-  //   .this(response => {
-  //     for(let i = 0; i < carsList.length; i++){
-  //       return(
-  //         <section>
-  //           CarsList[i]
-  //           <button onclick={BuyCar} >Buy Car</button>
-  //         </section>
-  //       ) 
-  //     }
-  //   })
-  // }
+  
+  componentDidMount(){
+    //componentDidMount is a lifecycle method. It will fire after the first invocation of render
+    //in the component. This is a great method for retrieving data from a server that you need 
+    //in your component right away.
+    this.saleList()
+  }
 
   // function BuyCar(){
   //   this.ownedList.post
@@ -48,18 +57,18 @@ function App() {
   //   this.SaleList.post
   //   this.ownedCars.delete
   // }
-
-  return (
-    <>
-    
-    <Header />
-    
-    <main>
-    <ForSale />
-    <MyGarage />
-    </main>
-    </>
-  );
+  render() {
+    console.log(this.state)
+    return (
+      <>
+      <Header />
+      <main>
+      <ForSale carsList={this.state.carsList}/>
+      <MyGarage />
+      </main>
+      </>
+    );
+  }
 }
 
 export default App;

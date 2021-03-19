@@ -1,11 +1,14 @@
 const express = require("express"),
-      forSale = require ('./control/forSale'),
-      garage = require ('./control/garage'),
-      port = 3943,
-      app = express()
+const forSale = require ('./control/forSale'),
+const garage = require ('./control/garage'),
+
+const app = express(),
+const port = 3000;
 
 app.use(express.json());
 
-app.get('/api/')
+app.get('/api/CarsList', forSale.loadCars)
+
+app.get ('')
 
 app.listen(port, () => console.log(`server running on port ${port}`))

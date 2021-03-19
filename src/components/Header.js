@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './images/star.png'
+import Logo from '../images/star.png'
 
 export default function Header(){
   return(
