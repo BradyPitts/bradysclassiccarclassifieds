@@ -5,14 +5,14 @@ import Car from './Car'
   // const carsForSale = [List]
 const ForSale = props => {
   const mappedCars = props.carsList.map((carsList, i) => (
-      <Car 
-          key={i}
-          carsList={carsList}
+      <Car
+          id={i}
+          cars={carsList}
           nameFn={props.nameFn}
           releaseFn={props.releaseFn}/>
   ))
-  
         
+
     return(
   //     <div>
   //     <h1>Pokedex</h1>

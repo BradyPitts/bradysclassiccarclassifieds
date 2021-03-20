@@ -17,7 +17,8 @@ class App extends Component {
   saleList(carsList){
     axios.get ('./CarsList.json')
       .then(res => {
-      this.setState({ saleList: res.data })
+      this.setState({ carsList: res.data })
+      console.log(this.state.carsList)
     })
   }
 
@@ -58,7 +59,7 @@ class App extends Component {
   //   this.ownedCars.delete
   // }
   render() {
-    console.log(this.state)
+    console.log(this.state.carsList)
     return (
       <>
       <Header />
