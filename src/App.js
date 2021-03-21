@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      carsList: []
+      carsList: [],
+      myGarage: []
     }
     this.saleList = this.saleList.bind(this);
   }
@@ -34,15 +35,31 @@ class App extends Component {
     //in the component. This is a great method for retrieving data from a server that you need 
     //in your component right away.
     this.saleList()
-
   }
 
-  buyCarFn = (id) => {
+  buyCarFn = (carId) => {
     console.log('App.js button press')
-    axios.post(`/api/buyCar/${id}`)
+    console.log(carId)
+    axios.post(`/api/buyCar/${carId}`)
     .then(res => {
-      
+      this.setState({carslist: res.data.carsList, myGarage: res.data.myGarage})
+      console.log('axios call sent')
     })
+    .catch(err => console.log(err))
+  }
+
+
+  
+
+  sellCarFn = (carId) => {
+    console.log('App.js button press')
+    console.log(carId)
+    axios.post(`/api/sellCar/${carId}`)
+    .then(res => {
+      this.setState({carslist: res.data.carsList, myGarage: res.data.myGarage})
+      console.log('axios call sent')
+    })
+    .catch(err => console.log(err))
   }
 
   // function OwnedCars(){
@@ -78,7 +95,12 @@ class App extends Component {
       carsList={this.state.carsList}
       buyCarFn = {this.buyCarFn}
       />
-      <MyGarage />
+
+      <MyGarage
+      myGarage = {this.state.myGarage} 
+      sellCarFn = {this.state.sellCarFn}
+      />
+
       </main>
       </>
     );

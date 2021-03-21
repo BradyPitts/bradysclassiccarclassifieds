@@ -17,17 +17,17 @@ console.log(props.buyCar)
                 <section>
                     <img src={this.props.img} alt={this.props.name} />
                     <ul>
-                        <li>name={this.props.name}</li>
-                        <li>mk={this.props.mk}</li>
-                        <li>model={this.props.model}</li>
-                        <li>year={this.props.year}</li>
-                        <li>price={this.props.price}</li>
+                        <li>name: {this.props.name}</li>
+                        <li>make: {this.props.make}</li>
+                        <li>model: {this.props.model}</li>
+                        <li>year: {this.props.year}</li>
+                        <li>price: {this.props.price}</li>
                     </ul>
                     <div>
                         {/* <input
                             // value={this..nameInput}
                             onChange={e => this.handleInput(e.target.value)} /> */}
-                        <button onClick={this.props.buyCarFn(this.id)}>Buy Car</button>
+                        <button onClick={() => this.props.buyCarFn(this.props.carId)}>Buy Car</button>
                     </div>
                 </section>
             </div>

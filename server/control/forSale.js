@@ -1,5 +1,5 @@
-let carsList = [null];
-const myGarage = [null];
+let carsList = [];
+let myGarage = [];
 const fs = require ('fs');
 let headers = {"Access-Control-Allow-Origin": "*"}
 
@@ -7,7 +7,7 @@ module.exports = {
   //laod CarsList.json for ForSale component
   loadCars: (req,res) =>{
     rawData = fs.readFileSync('./public/CarsList.json');
-    let carsList = JSON.parse(rawData) 
+    carsList = JSON.parse(rawData) 
     console.log(carsList)
     // res.writeHead(headers);
     res.status(200).send(carsList);
@@ -18,16 +18,33 @@ module.exports = {
   buyCar: (req,res) =>{
     console.log('buy car invoked')
     let index = null;
-    // let carsList = fs.readFileSync('./public/CarsList.json');
-    carsList.foreach((car, i) => {
-      if (carsList[i].id === Number(req.params.id)) index = i;
-    });
-    myGarage.push(carsList.index)
-    console.log(carsList.index)
-    carsList.splice(index, 1);
+    let targetCar = Number(req.params.id)
+
+    for (let x = 0; x < carsList.length; x++){
+
+      // console.log(targetCar)
+      // console.log(`current loop cheching ${carsList[x].id}`)
+
+      console.log(`id passed in - ${targetCar}`)
+      console.log(`id checking against - ${carsList[x].id}`)
+
+      if (carsList[x].id == targetCar){
+
+        myGarage.push(carsList[x]);
+        console.log(`pre splice id = ${carsList[x].name}`);
+        console.log(typeof (carsList[x]));
+        carsList.splice(carsList[x].id, 1);
+        // console.log('entered if statement');
+        break
+      }
+    };
+    // myGarage.push(carsList.index)
+    // console.log(carsList.index)
+    // carsList.splice(index, 1);
     
 
     let returnLists = {"carsList": carsList, "myGarage": myGarage}
+    console.log(returnLists)
     res.status(200).send(returnLists);
   },
 
