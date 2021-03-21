@@ -18,9 +18,9 @@ header{
 
 header img{
   position: absolute;
-  left: 20px;
-  top: 20px;
-  height: 10vh;
+  left: 10px;
+  top: 10px;
+  height:7vw;
 }
 
 h1{
@@ -75,6 +75,7 @@ h2{
 }
 
 
+
 aside{
   margin: 1.5vw;
   display: flex;
@@ -120,6 +121,11 @@ article section button {
 aside section button {
   background-color: red;
   padding: 5px;
+}
+
+
+article img{
+  width: 10vw;
 }
 
 section h4{

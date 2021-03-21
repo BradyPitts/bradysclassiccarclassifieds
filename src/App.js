@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import Header from './components/Header'
 import ForSale from './components/Forsale'
 import MyGarage from './components/MyGarage'
-import axios from 'axios'
+import Car from './components/Car'
 // import './CarsList.json'
 
 class App extends Component {
@@ -13,12 +14,17 @@ class App extends Component {
     }
     this.saleList = this.saleList.bind(this);
   }
-  
+
   saleList(carsList){
-    axios.get ('./CarsList.json')
+    // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+    axios.get('/api/carsList/') 
       .then(res => {
       this.setState({ carsList: res.data })
-      console.log(this.state.carsList)
+      console.log('carslist loaded')
+      // console.log(this.state.carsList)
+    })
+    .catch(error =>{
+      alert('Error Sale List not loaded')
     })
   }
 
@@ -28,12 +34,16 @@ class App extends Component {
     //in the component. This is a great method for retrieving data from a server that you need 
     //in your component right away.
     this.saleList()
+
   }
 
-  // function BuyCar(){
-  //   this.ownedList.post
-  //   this.SaleList.delete
-  // }
+  buyCarFn = (id) => {
+    console.log('App.js button press')
+    axios.post(`/api/buyCar/${id}`)
+    .then(res => {
+      
+    })
+  }
 
   // function OwnedCars(){
   //   axios.get ('./CarsList/ownedCars/')
@@ -59,12 +69,15 @@ class App extends Component {
   //   this.ownedCars.delete
   // }
   render() {
-    console.log(this.state.carsList)
+    // console.log(this.state.carsList)
     return (
       <>
       <Header />
       <main>
-      <ForSale carsList={this.state.carsList}/>
+      <ForSale 
+      carsList={this.state.carsList}
+      buyCarFn = {this.buyCarFn}
+      />
       <MyGarage />
       </main>
       </>

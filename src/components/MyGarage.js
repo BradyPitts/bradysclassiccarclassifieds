@@ -25,6 +25,7 @@ export default function MyGarage(){
     <aside>
       <h3>Your Owned Cars</h3>
       <h5>Your Money ${myMoney}</h5>
+      <button onClick = ''>Sell All</button>
 
       {/* ${OwnedCars()} */}
       <section>
@@ -32,14 +33,7 @@ export default function MyGarage(){
         <br />
         <button>Sell Car</button>
       </section>
-      <section>
-        <h4>Owned Car</h4>
-        <br />
-        <button>Sell Car</button>
-      </section>
-
-
-
+      
     </aside>
     
   );

@@ -1,52 +1,40 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
 
 class Car extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {
-            isEditing: false,
-            nameInput: ''
-        }
-    }
+        // this.state = {
+        //     value: this.props,
+        // };
+console.log('list passed to car')
+console.log(props.buyCar)
 
-    //This method will update the nameInput value on state as a user types into the input below
-    handleInput = (val) => {
-        this.setState({nameInput: val})
     }
-
-    //This method handles toggling in and out of our editing view(shown in conditional rendering below)
-    handleToggle = () => {
-        this.setState({isEditing: !this.state.isEditing})
-    }
-
-    handleEdit = (id) => {
-        this.props.nameFn(id, this.state.nameInput);
-        this.handleToggle();
-    }
-
-    render(){
+    render() {
         return (
             <div>
-                <img src={this.props.car.image} alt={this.props.car.name}/>
-                {this.state.isEditing
-                ? (
+                <section>
+                    <img src={this.props.img} alt={this.props.name} />
+                    <ul>
+                        <li>name={this.props.name}</li>
+                        <li>mk={this.props.mk}</li>
+                        <li>model={this.props.model}</li>
+                        <li>year={this.props.year}</li>
+                        <li>price={this.props.price}</li>
+                    </ul>
                     <div>
-                        <input 
-                            value={this.state.nameInput}
-                            onChange={e => this.handleInput(e.target.value)}/>
-                        <button onClick={() => this.handleEdit(this.props.car.id)}>Submit</button>
+                        {/* <input
+                            // value={this..nameInput}
+                            onChange={e => this.handleInput(e.target.value)} /> */}
+                        <button onClick={this.props.buyCarFn(this.id)}>Buy Car</button>
                     </div>
-                )
-                : (
-                    <div>
-                        <p>{this.props.car.name}</p>
-                        <button onClick={this.handleToggle}>Edit Name</button>
-                    </div>
-                )}
-                {/* <button onClick={() => this.props.releaseFn(this.props.car.id)}>Release</button> */}
+                </section>
             </div>
+
+
+                
         )
     }
-}
-
+}           
 export default Car;
