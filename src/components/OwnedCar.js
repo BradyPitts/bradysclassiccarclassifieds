@@ -27,7 +27,7 @@ console.log('list passed to car')
                         {/* <input
                             // value={this..nameInput}
                             onChange={e => this.handleInput(e.target.value)} /> */}
-                            <button onClick={() => this.props.reNameCar(this.props.name)}>Rename Car</button>
+                            <button onClick={() => this.props.reNameCarFn(this.props.carId, this.props.name)}>Rename Car</button>
                         <button onClick={() => this.props.sellCarFn(this.props.carId)}>Sell Car</button>
                     </div>
                 </section>

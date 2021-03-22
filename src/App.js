@@ -34,10 +34,10 @@ class App extends Component {
     console.log(carId)
     axios.post(`/api/buyCar/${carId}`)
     .then(res => {
-      this.setState({carslist: res.data.carsList, myGarage: res.data.myGarage})
+      this.setState({carsList: res.data.carsList, myGarage: res.data.myGarage})
       
       console.log('server response')
-      console.log(res.data)
+      console.log(this.state.carsList)
     })
     .catch(err => console.log(err))
   }
@@ -50,7 +50,7 @@ class App extends Component {
     console.log(carId)
     axios.post(`/api/sellCar/${carId}`)
     .then(res => {
-      this.setState({carslist: res.data.carsList, myGarage: res.data.myGarage})
+      this.setState({carsList: res.data.carsList, myGarage: res.data.myGarage})
       
     })
     .catch(err => console.log(err))
@@ -67,9 +67,9 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
-  reNameCarFn = (name) =>{
+  reNameCarFn = (carId, name) =>{
     console.log('rename Car pressed')
-    axios.put(`/api/reNameCar/${name}`)
+    axios.put(`/api/reNameCar/${carId}`,{name})
     .then(res =>{
       console.log('rename server responded')
       this.setState({myGarage: res.data})

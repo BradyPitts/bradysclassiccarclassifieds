@@ -40,7 +40,7 @@ module.exports = {
 
         // console.log(targetIndex)
         myGarage.push(carsList[x]);
-        carsList.splice(carsList[x], 1);
+        carsList.splice(x, 1);
         // carsList.push(myGarage[x]);
         // myGarage.splice(myGarage[x], 1);
         // console.log('entered if statement');
@@ -68,7 +68,7 @@ module.exports = {
     let targetCar = (req.params.id)
     for (let x = 0; x < myGarage.length; x++){
       if ( targetCar == myGarage[x].id){
-        myGarage[x].name = req.params.name
+        myGarage[x].name = req.body.name
         break
       }
     }
@@ -104,7 +104,8 @@ module.exports = {
         // console.log('here i am')
         // console.log(myGarage[x])
         carsList.push(myGarage[x]);
-        myGarage.splice(myGarage[x], 1);
+        myGarage.splice(x, 1);
+        console.log('here i am ' + carsList)
         // console.log('entered if statement');
         break
       }
