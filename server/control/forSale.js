@@ -65,10 +65,14 @@ module.exports = {
   //edit the name of a car
   renameCar: (req,res) =>{
     console.log('rename car invoked')
-    let targetCarName = (req.params.name)
+    let targetCar = (req.params.id)
     for (let x = 0; x < myGarage.length; x++){
-
+      if ( targetCar == myGarage[x].id){
+        myGarage[x].name = req.params.name
+        break
+      }
     }
+    res.status(200).send(myGarage)
   },
 
   //add a car back to carsList and remove from myGarage

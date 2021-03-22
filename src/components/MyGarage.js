@@ -25,28 +25,12 @@ const MyGarage = (props) =>{
     
   ));
 
-
-  // function OwnedList(){
-  //   return(
-  //     <section>
-  //       ${this.ownedCars}
-
-  //       <button onclick={SellCar} >
-  //         Sell Car
-  //       </button>
-        
-  //     </section>
-  //   )
-  // }
-
-
-    
   return(
     
     <aside>
       <h3>Your Owned Cars</h3>
       <h5>Your Money ${myMoney}</h5>
-      {/* <button onClick = {()=>this.sellAllFn()}>Sell All</button> */}
+      <button onClick = {()=>this.sellAllFn()}>Sell All</button>
       {myGarage}
     </aside>
     

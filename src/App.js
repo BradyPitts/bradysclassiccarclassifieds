@@ -3,8 +3,7 @@ import axios from 'axios'
 import Header from './components/Header'
 import ForSale from './components/Forsale'
 import MyGarage from './components/MyGarage'
-import Car from './components/Car'
-// import './CarsList.json'
+
 
 class App extends Component {
   constructor(props){
@@ -17,7 +16,6 @@ class App extends Component {
   }
 
   saleList(){
-    // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios.get('/api/carsList/') 
       .then(res => {
       this.setState({ carsList: res.data })
@@ -53,7 +51,7 @@ class App extends Component {
     axios.post(`/api/sellCar/${carId}`)
     .then(res => {
       this.setState({carslist: res.data.carsList, myGarage: res.data.myGarage})
-      console.log('axios call sent')
+      
     })
     .catch(err => console.log(err))
   }
@@ -69,15 +67,15 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
-  // reNameCarFn = (carId, name) =>{
-  //   console.log('rename Car pressed')
-  //   axios.put(`/api/reNameCar/${carID}${name}`)
-  //   .then(res =>{
-  //     console.log('rename server responded')
-  //     this.setState({myGarage: res.data})
-  //   })
-  //   .catch(err => console.log(err))
-  // }
+  reNameCarFn = (name) =>{
+    console.log('rename Car pressed')
+    axios.put(`/api/reNameCar/${name}`)
+    .then(res =>{
+      console.log('rename server responded')
+      this.setState({myGarage: res.data})
+    })
+    .catch(err => console.log(err))
+  }
 
   
   componentDidMount(){
