@@ -25,13 +25,13 @@ app.get ('/api/carsList', forSale.loadGarage)
 app.post('/api/buyCar/:id', forSale.buyCar)
 
 //add car back to carsList and remove from myGarage
-app.post('/api/carsList:id', forSale.sellCar)
+app.post('/api/sellCar/:id', forSale.sellCar)
 
 //edit the name of a car within myGarage
-app.put('/api/carsList:id', forSale.renameCar)
+app.put('/api/reNameCar/:id', forSale.renameCar)
 
 //add all cars back to carsList and remove all from myGarage
-app.delete('/api/carsList', forSale.sellAll)
+app.delete('/api/sellAll', forSale.sellAll)
 
 
 

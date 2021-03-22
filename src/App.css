@@ -124,7 +124,7 @@ aside section button {
 }
 
 
-article img{
+section img{
   width: 10vw;
 }
 
@@ -133,4 +133,5 @@ section h4{
   width: 14vw;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }

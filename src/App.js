@@ -16,7 +16,7 @@ class App extends Component {
     this.saleList = this.saleList.bind(this);
   }
 
-  saleList(carsList){
+  saleList(){
     // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     axios.get('/api/carsList/') 
       .then(res => {
@@ -29,30 +29,26 @@ class App extends Component {
     })
   }
 
-  
-  componentDidMount(){
-    //componentDidMount is a lifecycle method. It will fire after the first invocation of render
-    //in the component. This is a great method for retrieving data from a server that you need 
-    //in your component right away.
-    this.saleList()
-  }
 
+  
   buyCarFn = (carId) => {
-    console.log('App.js button press')
+    console.log('App.js buy button press')
     console.log(carId)
     axios.post(`/api/buyCar/${carId}`)
     .then(res => {
       this.setState({carslist: res.data.carsList, myGarage: res.data.myGarage})
-      console.log('axios call sent')
+      
+      console.log('server response')
+      console.log(res.data)
     })
     .catch(err => console.log(err))
   }
 
 
-  
+
 
   sellCarFn = (carId) => {
-    console.log('App.js button press')
+    console.log('App.js sellbutton press')
     console.log(carId)
     axios.post(`/api/sellCar/${carId}`)
     .then(res => {
@@ -62,29 +58,36 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
-  // function OwnedCars(){
-  //   axios.get ('./CarsList/ownedCars/')
-  //   .this(response => {
-  //     for(let i = 0; i < ownedCars.length; i++){
-  //       return(
-  //         <section>
-  //           CarsList[i]
-  //           <button onclick={NameCar} >Rename Car</button>
-  //           <button onclick={SellCar} >Sell Car</button>
-  //         </section>
-  //       ) 
-  //     }
+
+
+  sellAllFn = () =>{
+    console.log('sell all pressed')
+    axios.delete('/api/sellAll')
+    .then(res =>{
+      this.setState({carsList: res.data.carsList, myGarage: res.data.myGarage})
+    })
+    .catch(err => console.log(err))
+  }
+
+  // reNameCarFn = (carId, name) =>{
+  //   console.log('rename Car pressed')
+  //   axios.put(`/api/reNameCar/${carID}${name}`)
+  //   .then(res =>{
+  //     console.log('rename server responded')
+  //     this.setState({myGarage: res.data})
   //   })
+  //   .catch(err => console.log(err))
   // }
 
-  // function NameCar(){
-  //   this.ownedCars.name = InputEvent
-  // }
+  
+  componentDidMount(){
+    //componentDidMount is a lifecycle method. It will fire after the first invocation of render
+    //in the component. This is a great method for retrieving data from a server that you need 
+    //in your component right away.
+    this.saleList()
+  }
 
-  // function SellCar(){
-  //   this.SaleList.post
-  //   this.ownedCars.delete
-  // }
+
   render() {
     // console.log(this.state.carsList)
     return (
@@ -98,7 +101,9 @@ class App extends Component {
 
       <MyGarage
       myGarage = {this.state.myGarage} 
-      sellCarFn = {this.state.sellCarFn}
+      sellCarFn = {this.sellCarFn}
+      sellAllFn = {this.sellAllFn}
+      reNameCarFn = {this.reNameCarFn}
       />
 
       </main>

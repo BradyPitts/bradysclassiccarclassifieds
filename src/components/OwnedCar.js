@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Car extends Component {
+class OwnedCar extends Component {
     constructor(props) {
         super(props);
         // this.state = {
@@ -21,13 +21,14 @@ console.log('list passed to car')
                         <li>make: {this.props.make}</li>
                         <li>model: {this.props.model}</li>
                         <li>year: {this.props.year}</li>
-                        <li>price: {this.props.price}</li>
+                        {/* <li>price: {this.props.price}</li> */}
                     </ul>
                     <div>
                         {/* <input
                             // value={this..nameInput}
                             onChange={e => this.handleInput(e.target.value)} /> */}
-                        <button onClick={() => this.props.buyCarFn(this.props.carId)}>Buy Car</button>
+                            <button onClick={() => this.props.reNameCar(this.props.name)}>Rename Car</button>
+                        <button onClick={() => this.props.sellCarFn(this.props.carId)}>Sell Car</button>
                     </div>
                 </section>
             </div>
@@ -37,4 +38,4 @@ console.log('list passed to car')
         )
     }
 }           
-export default Car;
+export default OwnedCar;
